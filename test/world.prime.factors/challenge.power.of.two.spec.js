@@ -5,7 +5,7 @@ var expect = chai.expect;
 var server  = require('../../libs/server');
 
 describe('Passing the Power of Two level:', function() {
-
+/*
     var testServer;
     
     beforeEach(function(done) {
@@ -28,5 +28,5 @@ describe('Passing the Power of Two level:', function() {
             done(); 
         });
     });
-   
+   */
 });
