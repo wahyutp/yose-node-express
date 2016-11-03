@@ -15,6 +15,10 @@ server.get('/ping', function(request, response){
     require('./challenge.ping/ping.endpoint')(request, response);
 });
 
+server.get('/contact-me', function(request, response){
+    require('./challenge.hello.yose/contact')(request, response);
+});
+
 server.get('/primeFactors', function(request, response){
     require('./world.prime.factors/prime.factors')(request, response);
 });
