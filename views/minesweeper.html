@@ -14,8 +14,13 @@ document.onreadystatechange=load();
 
 {% block content %}
 <h1 id="title">Minesweeper</h1>
-
 <table>
-<tr></tr>
+{% for n in range(1, 9) -%}
+    <tr>
+        {% for p in range(1, 9) -%}
+            <td id="cell-{{n}}x{{p}}"></td>
+        {%- endfor %}
+    </tr>
+{%- endfor %}
 </table>
 {% endblock %}
