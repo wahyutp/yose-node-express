@@ -66,12 +66,15 @@ describe('Passing the astroport name test:', function() {
     });
 
     it("should display ship1 name on #ship1 after #dock clicked", function(done){
-        var opts = {url: 'http://localhost:7000/astroport', method: 'post'};
-        request(opts, function (err, res, body) {
-            // you will need to customize the assertions below based on your server
-            // expect(body).to.contain( 'Astroport' );
+        browser.visit("http://localhost:7000/astroport", function () {
+            browser.fill('#ship', 'Ship 1');
+            browser.document.forms[0].submit();
 
-            done();
+            browser.wait().then(function() {
+                var result = browser.evaluate("document.getElementById('ship-1').innerHTML");
+                expect(result).to.equal('Ship 1');
+                done();
+            })
         });
     });
 
