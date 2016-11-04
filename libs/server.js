@@ -39,5 +39,9 @@ server.post('/astroport', function(request, response){
 	require('./world.astroport/astroport')(request, response);
 });
 
+server.get('/primeFactors/ui', function(request, response){
+	require('./world.prime.factors/prime.ui')(request, response);
+});
+
 server.use(express.static('public'));
 module.exports = server;
