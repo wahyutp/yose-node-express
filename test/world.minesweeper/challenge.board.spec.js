@@ -8,7 +8,7 @@ var server  = require('../../libs/server');
 var url = "http://localhost:7000/minesweeper";
 
 describe('Passing the Minesweeper: board level:', function() {
-    beforeEach(function(done) {
+    /*beforeEach(function(done) {
         testServer = http.createServer(server).listen(7000, done);
     });
 
@@ -23,5 +23,5 @@ describe('Passing the Minesweeper: board level:', function() {
             done();
         });
     });
-   
+   */
 });
