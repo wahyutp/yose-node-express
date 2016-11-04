@@ -19,7 +19,7 @@ var data = [
     ];
 
 describe('Passing the Minesweeper: injection level:', function() {
-    beforeEach(function(done) {
+    /*beforeEach(function(done) {
         testServer = http.createServer(server).listen(7000, done);
     });
 
@@ -57,6 +57,6 @@ describe('Passing the Minesweeper: injection level:', function() {
             done();
         });
                
-    });
+    });*/
    
 });
