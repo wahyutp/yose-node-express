@@ -22,4 +22,10 @@ describe('Prime factors decomposition', function() {
       primeFactorsOf('hello');
     }).to.throw('not a number');
   });
+
+  it('should error when > 1000000', function() {
+    expect(function() {
+      primeFactorsOf(1000001);
+    }).to.throw('too big number (>1e6)');
+  });
 });

@@ -3,6 +3,9 @@ primeFactorsOf = function(number) {
   if (!parseInt(number)) {
     throw new Error('not a number');
   }
+  if (parseInt(number) > 1000000) {
+    throw new Error('too big number (>1e6)');
+  }
   var primes = getPrimes(number);
 
   primes.forEach(function(prime) {
