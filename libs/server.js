@@ -1,11 +1,15 @@
 var express = require('express');
 var server = express();
 var nunjucks = require('nunjucks');
+var bodyParser = require('body-parser');
 
 nunjucks.configure('views', {
     autoescape: true,
     express: server
 });
+
+server.use(bodyParser.json()); // support json encoded bodies
+server.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 server.get('/', function(request, response){
     require('./challenge.hello.yose/hello')(request, response);
@@ -28,6 +32,10 @@ server.get('/minesweeper', function(request, response){
 });
 
 server.get('/astroport', function(request, response){
+	require('./world.astroport/astroport')(request, response);
+});
+
+server.post('/astroport', function(request, response){
 	require('./world.astroport/astroport')(request, response);
 });
 

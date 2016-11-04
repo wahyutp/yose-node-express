@@ -1,10 +1,18 @@
 <h1 id="astroport-name">Astroport</h1>
+
+<form method="post" id="dock-form">
+    Ship <input type="text" id="ship" name="ship1"><button type="submit" id="dock">Dock</button>
+</form>
+
 <div id="gate-1">
-    <div id="ship-1"></div>
+    <b>Ship :</b>
+    <div id="ship-1">{{ ship1 }}</div>
 </div>
 <div id="gate-2">
-    <div id="ship-2"></div>
+    <b>Ship :</b>
+    <div id="ship-2">{{ ship2 }}</div>
 </div>
 <div id="gate-3">
-    <div id="ship-3"></div>
+    <b>Ship :</b>
+    <div id="ship-3">{{ ship3 }}</div>
 </div>
