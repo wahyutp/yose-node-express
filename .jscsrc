@@ -1,0 +1,12 @@
+{
+  "disallowSpacesInsideArrayBrackets": false,
+  "disallowSpacesInsideBrackets": false,
+  "requireLineFeedAtFileEnd": false,
+  "requirePaddingNewLinesAfterBlocks": false,
+  "requireSpacesInAnonymousFunctionExpression": {
+    "beforeOpeningCurlyBrace": true
+  },
+  "requireTrailingComma": true,
+  "safeContextKeyword": false,
+  "validateQuoteMarks": "'"
+}

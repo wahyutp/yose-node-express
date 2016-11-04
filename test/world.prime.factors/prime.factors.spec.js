@@ -6,11 +6,15 @@ var primeFactorsOf = require('../../libs/world.prime.factors/lib/prime.factors.o
 describe('Prime factors decomposition', function() {
 
   it('can decompose 2', function() {
-    expect(primeFactorsOf(2)).to.deep.equal([2]);
+    expect(primeFactorsOf(2)).to.deep.equal([2, ]);
   });
 
   it('can decompose 8', function() {
-    expect(primeFactorsOf(8)).to.deep.equal([2, 2, 2]);
+    expect(primeFactorsOf(8)).to.deep.equal([2, 2, 2, ]);
+  });
+
+  it('can decompose 300', function() {
+    expect(primeFactorsOf(300)).to.deep.equal([2, 2, 3, 5, 5, ]);
   });
 
   it('should error when not number', function() {
