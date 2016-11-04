@@ -8,9 +8,15 @@ var primeFactors = function(request, response) {
       decomposition: primeFactorsOf(parseInt(request.query.number)),
     });
   } catch (err) {
+    var number;
+    if (parseInt(request.query.number)) {
+      number = parseInt(request.query.number);
+    } else {
+      number = request.query.number;
+    }
     response.json({
-      number: request.query.number,
-      error: err.message
+      number: number,
+      error: err.message,
     });
   }
   // response.setHeader('Content-Type', 'application/json');

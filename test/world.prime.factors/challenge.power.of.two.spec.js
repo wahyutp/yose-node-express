@@ -19,17 +19,28 @@ describe('Passing the Power of Two level:', function() {
   it('returns the expected output', function(done) {
     request('http://localhost:7000/primeFactors?number=16', function(error, response, body) {
       expect(JSON.parse(body)).to.deep.equal({
-        "number": 16,
-        "decomposition": [2, 2, 2, 2]
+        'number': 16,
+        'decomposition': [2, 2, 2, 2, ],
       });
       done();
     });
   });
+
   it('returns error when input is not number', function(done) {
     request('http://localhost:7000/primeFactors?number=hello', function(error, response, body) {
       expect(JSON.parse(body)).to.deep.equal({
-        "number": "hello",
-        "error": "not a number"
+        'number': 'hello',
+        'error': 'not a number',
+      });
+      done();
+    });
+  });
+
+  it('returns error when input is not number', function(done) {
+    request('http://localhost:7000/primeFactors?number=1000001', function(error, response, body) {
+      expect(JSON.parse(body)).to.deep.equal({
+        'number': 1000001,
+        'error': 'too big number (>1e6)',
       });
       done();
     });
