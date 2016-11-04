@@ -1,29 +1,36 @@
+var _ = require('lodash');
+
 var primeFactorsOf = require('./lib/prime.factors.of');
 
 var primeFactors = function(request, response) {
-
-  try {
-    response.json({
-      number: parseInt(request.query.number),
-      decomposition: primeFactorsOf(parseInt(request.query.number)),
+  if (_.isArray(request.query.number)) {
+    var data = [];
+    request.query.number.forEach(function(number) {
+      data.push(generateData(number));
     });
-  } catch (err) {
-    var number;
-    if (parseInt(request.query.number)) {
-      number = parseInt(request.query.number);
-    } else {
-      number = request.query.number;
-    }
-    response.json({
-      number: number,
-      error: err.message,
-    });
+    response.json(data);
+  } else {
+    response.json(generateData(request.query.number));
   }
-  // response.setHeader('Content-Type', 'application/json');
-  //   response.send({ number: number, decomposition: decomposition });
-
-
-
 };
+
+function generateData(input) {
+  var data;
+  var number;
+  try {
+    number = parseInt(input);
+    data = {
+      number: number,
+      decomposition: primeFactorsOf(number),
+    };
+  } catch (err) {
+    data = {
+      number: number || input,
+      error: err.message,
+    };
+  }
+  // console.log(data);
+  return data;
+}
 
 module.exports = primeFactors;
